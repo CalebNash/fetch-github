@@ -43,9 +43,7 @@ fetch(USER_URL)
     var template = Handlebars.compile(source);
     // console.log(template);
 
-    var context = {
-      repos: user,
-    };
+    var context = user;
 
     var html = template(context);
     console.log(html);
@@ -65,12 +63,11 @@ fetch(USER_URL)
       var source = document.getElementById("orgs-template").innerHTML;
       // console.log('source', source);
       var template = Handlebars.compile(source);
-      // console.log(template);
+       // console.log(orgs.avatar_url);
 
       var context = {
-        repos: orgs,
-      };
-
+        orgs: orgs
+      }
       var html = template(context);
       console.log(html);
 

@@ -29,13 +29,15 @@
 
 
 <script id="orgs-template" type="text/x-handlebars-template">
+  {{#each orgs}}
   <h6 class='orgs-text'>Organizations</h6>
-  <img class='org-img' src="https://avatars2.githubusercontent.com/u/69909898?v=4" alt="">
+  <img class='org-img' src={{this.avatar_url}} alt="">
+  {{/each}}
 </script>
 
 
   <script id="user-template" type="text/x-handlebars-template">
-    <img class='user-img' src="https://avatars2.githubusercontent.com/u/35848756?v=4" alt="">
+    <img class='user-img' src={{this.avatar_url}} alt="">
     <p class='full-name'>{{this.login}}</p>
     <button class='edit-profile'>Edit Profile</button>
     <section  class='social-info'>
