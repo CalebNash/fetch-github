@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>fetch-github</title>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+<link rel="stylesheet" href="./styles.css">
+
+<body>
+  <div class='container'>
+    <div class='row'>
+      <div class="col-4 side">
+        <section class='profile'>
+
+        </section>
+        <section class='organizations'>
+
+        </section>
+      </div>
+      <div class='col-8 main'>
+        <ul class='repositories'>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+<script id="orgs-template" type="text/x-handlebars-template">
+  <h6 class='orgs-text'>Organizations</h6>
+  <img class='org-img' src="https://avatars2.githubusercontent.com/u/69909898?v=4" alt="">
+</script>
+
+
+  <script id="user-template" type="text/x-handlebars-template">
+    <img class='user-img' src="https://avatars2.githubusercontent.com/u/35848756?v=4" alt="">
+    <p class='full-name'>{{this.login}}</p>
+    <button class='edit-profile'>Edit Profile</button>
+    <section  class='social-info'>
+      <i class="fas fa-user-friends"></i>
+      <span class='follower-info'>{{this.followers}} follower {{this.following}} folowing </span>
+      <i class="far fa-star"></i>
+      <span class='number-of-stars'> 0</span>
+    </section>
+  </script>
+
+
+
+  <script id="repo-template" type="text/x-handlebars-template">
+    {{#each repos}}
+      <li class='repo'>
+        <div class='repo-content'>
+          <span class='name'>{{this.name}}</span>
+          <section class='info'>
+            <p class='language'>{{this.language}}</p>
+            <p class='updated'>{{this.updated_at}}</p>
+          </section>
+        </div>
+        <button class='favorite'>star</button>
+      </li>
+    {{/each}}
+  </script>
+
+
+
+
+
+
+
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js'></script>
+  <script src='main.js'></script>
+</body>
+
+</html>
